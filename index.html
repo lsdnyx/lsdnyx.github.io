@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login</title>
+  <title>Secure Login</title>
+  <meta charset="UTF-8">
   <script>
     function checkLogin(event) {
-      event.preventDefault(); // Stop form from submitting
+      event.preventDefault();
 
       const username = document.getElementById("username").value;
       const password = document.getElementById("password").value;
 
       if (username === "Ram" && password === "qwerty") {
-        window.location.href = "main.html"; // Your actual website
+        // Change this to your actual GitHub Pages URL + /main.html
+        window.location.href = "https://Lxd-Nyx.github.io/guitar-site/main.html";
       } else {
         alert("Incorrect username or password.");
       }
