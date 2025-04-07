@@ -1,29 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Lxd.Nyx - Guitar Works</title>
+  <title>Login</title>
+  <script>
+    function checkLogin(event) {
+      event.preventDefault(); // Stop form from submitting
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username === "Ram" && password === "qwerty") {
+        window.location.href = "main.html"; // Your actual website
+      } else {
+        alert("Incorrect username or password.");
+      }
+    }
+  </script>
 </head>
 <body>
-  <h1>Welcome to Lxd.Nyx's Guitar World</h1>
-  
-  <h2>Instagram</h2>
-  <p><strong>Username:</strong> @Lxd.Nyx</p>
-  
-  <h2>Instagram Bio</h2>
-  <p>— [Insert your Instagram bio here, or send it to me and I’ll fill it in]</p>
-  
-  <h2>My Guitar Works</h2>
-  <ul>
-    <li>Custom Riffs</li>
-    <li>Live Loops</li>
-    <li>Guitar Covers</li>
-    <li>Melodic Improvisations</li>
-    <!-- You can add or change these as you want -->
-  </ul>
-  
-  <h2>Join My Community</h2>
-  <p><strong>Telegram Group/Channel:</strong> <a href="https://xyz.com" target="_blank">xyz.com</a></p>
-  <p><strong>Instagram Group:</strong> <a href="https://csj.xyz" target="_blank">csj.xyz</a></p>
+  <h2>Login</h2>
+  <form onsubmit="checkLogin(event)">
+    <input type="text" id="username" placeholder="Username" required><br><br>
+    <input type="password" id="password" placeholder="Password" required><br><br>
+    <input type="submit" value="Login">
+  </form>
 </body>
 </html>
