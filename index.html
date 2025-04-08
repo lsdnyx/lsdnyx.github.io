@@ -1,30 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Secure Login</title>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Lxd.Nyx</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .login-box input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .login-box input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      color: #999;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Welcome Back</h2>
+    <form onsubmit="checkLogin(event)">
+      <input type="text" id="username" placeholder="Username" required><br>
+      <input type="password" id="password" placeholder="Password" required><br>
+      <input type="submit" value="Login">
+    </form>
+    <div class="footer-note">
+      Only authorized users may access this portal.
+    </div>
+  </div>
+
   <script>
     function checkLogin(event) {
       event.preventDefault();
-
       const username = document.getElementById("username").value;
       const password = document.getElementById("password").value;
 
       if (username === "Ram" && password === "qwerty") {
-        // Change this to your actual GitHub Pages URL + /main.html
-        window.location.href = "https://Lxd-Nyx.github.io/guitar-site/main.html";
+        window.location.href = "https://Lxd-Nyx.github.io/guitar-site/main.html"; // Change if repo is different
       } else {
         alert("Incorrect username or password.");
       }
     }
   </script>
-</head>
-<body>
-  <h2>Login</h2>
-  <form onsubmit="checkLogin(event)">
-    <input type="text" id="username" placeholder="Username" required><br><br>
-    <input type="password" id="password" placeholder="Password" required><br><br>
-    <input type="submit" value="Login">
-  </form>
 </body>
 </html>
