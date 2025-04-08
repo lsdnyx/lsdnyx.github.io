@@ -2,149 +2,127 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>🔰Lsd.Network</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(120deg, #1f1c2c, #928dab);
       color: #fff;
-      padding: 15px;
+      line-height: 1.6;
     }
 
     header {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      padding: 15px;
-      border-radius: 12px;
-      margin-bottom: 20px;
+      padding: 20px;
+      background-color: rgba(0,0,0,0.6);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
     }
 
-    header h1 {
-      font-size: 18px;
-      color: #00ffe1;
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #00ffe5;
     }
 
-    header a {
-      text-decoration: none;
-      background: #00ffe1;
+    .btn-back {
+      background-color: #00ffe5;
       color: #000;
-      padding: 6px 12px;
-      border-radius: 10px;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-decoration: none;
       font-weight: bold;
-      font-size: 14px;
     }
 
-    section {
-      background: rgba(255, 255, 255, 0.06);
-      padding: 16px;
-      border-radius: 15px;
-      margin-bottom: 18px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
     }
 
-    section h2 {
-      color: #00ffe1;
-      font-size: 16px;
+    h1, h2 {
+      color: #00ffe5;
       margin-bottom: 10px;
     }
 
-    section p, section li, section a {
-      font-size: 14px;
-      color: #e0e0e0;
-      line-height: 1.5;
+    .section {
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 4px solid #00ffe5;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    a {
+      color: #00ffe5;
+      word-break: break-word;
     }
 
     ul {
       padding-left: 20px;
-      margin-top: 8px;
-    }
-
-    a {
-      color: #00ffe1;
-      text-decoration: underline;
-    }
-
-    @media screen and (max-width: 600px) {
-      header, section {
-        padding: 12px;
-      }
-
-      header h1 {
-        font-size: 16px;
-      }
-
-      header a {
-        padding: 5px 10px;
-        font-size: 13px;
-      }
-
-      section h2 {
-        font-size: 15px;
-      }
-
-      section p, section li {
-        font-size: 13.5px;
-      }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>🔰Lsd.Network</h1>
-    <a href="index.html">Back to Login</a>
+    <div class="logo">🔰Lsd.Network</div>
+    <a href="index.html" class="btn-back">Back to Login</a>
   </header>
 
-  <section>
-    <h2>Welcome to the Portal</h2>
-    <p><strong>Name:</strong> Alexa</p>
-    <p><strong>Instagram ID:</strong> <a href="https://instagram.com/lxd.nyx" target="_blank">@Lxd.Nyx</a></p>
-    <p><strong>Telegram ID:</strong> <a href="https://t.me/fakeTelegram" target="_blank">@FakeTelegram</a></p>
-    <p><strong>Phone:</strong> +91 00000 00000</p>
-  </section>
+  <div class="container">
+    <div class="section">
+      <h1>Welcome to 🔰Lsd.Network</h1>
+      <p>Enter the world of advanced tech and creative execution.</p>
+    </div>
 
-  <section>
-    <h2>Need Work Done?</h2>
-    <p>Join our Instagram group chat for services:</p>
-    <a href="https://csj.xyz" target="_blank">csj.xyz</a>
-  </section>
+    <div class="section">
+      <h2>Admin</h2>
+      <p><strong>Name:</strong> Alexa</p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/Lxd.Nyx" target="_blank">@Lxd.Nyx</a></p>
+      <p><strong>Telegram:</strong> <a href="https://t.me/yourTelegramID" target="_blank">@yourTelegramID</a></p>
+      <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+    </div>
 
-  <section>
-    <h2>Want to See Demos?</h2>
-    <p>Instagram Demo Group: <a href="https://csj.xyz/demo" target="_blank">csj.xyz/demo</a></p>
-    <p>Telegram Demo Group: <a href="https://xyz.com/demo" target="_blank">xyz.com/demo</a></p>
-  </section>
+    <div class="section">
+      <h2>Group Links</h2>
+      <p>For work: <a href="https://csj.xyz" target="_blank">Instagram Group Chat</a></p>
+      <p>For demos:</p>
+      <ul>
+        <li><a href="https://xyz.com" target="_blank">Telegram Group</a></li>
+        <li><a href="https://csj.xyz" target="_blank">Instagram Demo Group</a></li>
+      </ul>
+    </div>
 
-  <section>
-    <h2>Services We Provide</h2>
-    <ul>
-      <li>Deepfake Creation</li>
-      <li>Device Hacking (Ethical/Educational)</li>
-      <li>Photograph Hosting</li>
-      <li>Personal Data Recovery (Uncr)</li>
-    </ul>
-  </section>
+    <div class="section">
+      <h2>Services Provided</h2>
+      <ul>
+        <li>Deepfake Creation</li>
+        <li>Device Hacking Assistance</li>
+        <li>Photograph Hosting</li>
+        <li>Personal Data Uncovering</li>
+      </ul>
+    </div>
 
-  <section>
-    <h2>Completed Work</h2>
-    <p>Explore our previous work:</p>
-    <ul>
-      <li>Web Page: <a href="https://xyz.com/completed" target="_blank">xyz.com/completed</a></li>
-      <li>Instagram Demos: <a href="https://instagram.com/demoGroup" target="_blank">Instagram Group</a></li>
-      <li>Telegram Demos: <a href="https://t.me/demoGroup" target="_blank">Telegram Group</a></li>
-    </ul>
-  </section>
-
+    <div class="section">
+      <h2>Completed Work</h2>
+      <p>See your completed projects here:</p>
+      <ul>
+        <li><a href="https://xyz.com/demo-webpage">Demo Web Page</a></li>
+        <li><a href="https://t.me/yourTelegramDemo" target="_blank">Telegram Demo Group</a></li>
+        <li><a href="https://instagram.com/yourInstaDemo" target="_blank">Instagram Demo Group</a></li>
+      </ul>
+    </div>
+  </div>
 </body>
 </html>
