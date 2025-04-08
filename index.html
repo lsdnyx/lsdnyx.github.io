@@ -10,42 +10,52 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: white;
+      z-index: -2;
     }
 
     .overlay {
-      background-color: rgba(0, 0, 0, 0.7);
       position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
       z-index: -1;
     }
 
-    .title {
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-      color: #38bdf8;
-      z-index: 1;
-    }
-
-    .login-box {
-      background: rgba(30, 41, 59, 0.85);
+    .container {
+      background-color: rgba(255, 255, 255, 0.1);
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
       width: 90%;
       max-width: 400px;
-      z-index: 1;
+      color: #fff;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      color: #38bdf8;
     }
 
     input[type="text"],
@@ -56,6 +66,12 @@
       border: none;
       border-radius: 8px;
       font-size: 1rem;
+      background-color: rgba(255,255,255,0.2);
+      color: white;
+    }
+
+    input::placeholder {
+      color: #ddd;
     }
 
     button {
@@ -90,15 +106,20 @@
       display: none;
       white-space: pre-wrap;
     }
+
+    @media (max-width: 480px) {
+      .title {
+        font-size: 1.6rem;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="overlay"></div>
 
-  <div class="title">🔱Lxd.Network🔱</div>
-
-  <div class="login-box">
+  <div class="container">
+    <div class="title">🔱Lxd.Network🔱</div>
     <form id="loginForm">
       <input type="text" id="username" placeholder="Username" required />
       <input type="password" id="password" placeholder="Password" required />
@@ -111,20 +132,15 @@
         3. Anurag - 3126@<br>
         4. Abhiansh - 3214@<br>
         5. Guest - 32146#<br>
-        Special Login: 000@ (see credentials)
+        Secret Login: 000@ (to show all)
       </div>
     </form>
   </div>
 
-  <!-- Login Sound -->
   <audio id="loginSound" src="https://cdn.pixabay.com/audio/2023/03/29/audio_a3f4c14425.mp3" preload="auto"></audio>
 
   <script>
-    const form = document.getElementById('loginForm');
-    const errorMsg = document.getElementById('errorMsg');
-    const credsBox = document.getElementById('showCreds');
-    const loginSound = document.getElementById('loginSound');
-
+    // Users
     const users = {
       Ram: 'qwerty',
       Roy: '0031@',
@@ -133,6 +149,13 @@
       Guest: '32146#'
     };
 
+    // Elements
+    const form = document.getElementById('loginForm');
+    const errorMsg = document.getElementById('errorMsg');
+    const credsBox = document.getElementById('showCreds');
+    const loginSound = document.getElementById('loginSound');
+
+    // Handle form submit
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       const user = document.getElementById('username').value.trim();
@@ -142,7 +165,7 @@
         loginSound.play();
         setTimeout(() => {
           window.location.href = 'main.html';
-        }, 500); // allow sound to play
+        }, 500);
       } else if (pass === '000@') {
         credsBox.style.display = 'block';
         errorMsg.style.display = 'none';
@@ -152,7 +175,7 @@
       }
     });
 
-    // Random background from Unsplash
+    // Background image logic
     const backgrounds = [
       'https://source.unsplash.com/1600x900/?cyber,network',
       'https://source.unsplash.com/1600x900/?hacker,tech',
@@ -161,8 +184,18 @@
       'https://source.unsplash.com/1600x900/?abstract,neon'
     ];
 
-    document.body.style.backgroundImage = `url('${backgrounds[Math.floor(Math.random() * backgrounds.length)]}')`;
-  </script>
+    const selectedBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    document.body.style.setProperty('--bg-image', `url('${selectedBg}')`);
+    document.body.style.backgroundImage = `url('${selectedBg}')`;
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundRepeat = 'no-repeat';
 
+    // Set it to body::before
+    document.body.style.setProperty('--bg', `url('${selectedBg}')`);
+    document.body.style.setProperty('--overlay-opacity', '0.6');
+    document.querySelector('body::before');
+    document.body.style.backgroundImage = `url('${selectedBg}')`;
+  </script>
 </body>
 </html>
